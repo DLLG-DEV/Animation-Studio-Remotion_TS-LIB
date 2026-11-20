@@ -1,0 +1,17 @@
+# Finales de línea consistentes (LF en el repositorio)
+* text=auto eol=lf
+
+# Binarios: nunca convertir ni intentar hacer diff de texto
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.wav binary
+*.mp3 binary
+*.mp4 binary
+*.mov binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary

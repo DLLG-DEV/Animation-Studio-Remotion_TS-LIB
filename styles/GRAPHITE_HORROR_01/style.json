@@ -1,0 +1,117 @@
+{
+  "id": "GRAPHITE_HORROR_01",
+  "version": "1.0.0",
+  "status": "stable — congelado; mejoras en GRAPHITE_HORROR_02",
+  "name": "Terror cinematográfico a lápiz",
+  "description": "Animación artesanal de terror dibujada a grafito sobre papel. Blanco y negro, trazos orgánicos, rayado cruzado, sombras profundas y dibujos sucesivos que 'hierven' entre fotogramas.",
+  "references": [
+    "Ilustración a grafito de libros de terror clásicos (rayado cruzado denso, siluetas)",
+    "Animación tradicional dibujada a lápiz con 'line boil' (trazos que tiemblan entre dibujos)",
+    "Grabado en plancha y cómic de horror en blanco y negro (contraste extremo, negros profundos)",
+    "Cine expresionista alemán (perspectivas forzadas, sombras alargadas)",
+    "Storyboards a lápiz de cine de suspenso"
+  ],
+  "palette": {
+    "paper": "#e9e3d5",
+    "paperLight": "#f3eee3",
+    "paperShadow": "#cdc4b1",
+    "graphite100": "#b9b4aa",
+    "graphite300": "#8a857c",
+    "graphite500": "#5c5852",
+    "graphite700": "#34312d",
+    "graphite900": "#151413",
+    "ink": "#0b0a09",
+    "eraser": "#efe9dc"
+  },
+  "illustration": {
+    "type": "Dibujo a grafito vectorial procedural (SVG) con texturas generadas",
+    "line": "Trazos irregulares, doble pasada, extremos que sobrepasan las esquinas, presión variable",
+    "shading": "Rayado cruzado en 1–4 capas según el tono; manchas de grafito difuminado para los negros",
+    "highlights": "La luz es el papel sin dibujar; brillos y niebla con marcas de goma de borrar",
+    "forbidden": [
+      "Fotografías convertidas a escala de grises",
+      "Degradados vectoriales lisos sin textura",
+      "Color (salvo el tono cálido del papel)",
+      "Líneas perfectamente rectas o geométricas sin temblor"
+    ]
+  },
+  "textures": {
+    "paper": "Ruido fractal de alta frecuencia (diente del papel) + manchas de baja frecuencia + fibras",
+    "graphite": "Ruido anisótropo (vetas en una dirección) que rompe el relleno como un lápiz real",
+    "tooth": "El diente del papel interrumpe los trazos: los trazos nunca son 100% sólidos",
+    "dust": "Motas y rayones de grafito que cambian con cada dibujo"
+  },
+  "lighting": {
+    "key": "Una única fuente dura (luna, farola, puerta al fondo) que deja el papel visible",
+    "shadows": "Muy profundas; el 60–75% del encuadre en tonos oscuros",
+    "vignette": "Fuerte, irregular, oscurece los bordes como si se hubiera frotado el grafito",
+    "flicker": "Parpadeo de exposición irregular; picos ocasionales de oscuridad"
+  },
+  "characters": {
+    "design": "Siluetas alargadas, extremidades delgadas, cabeza ligeramente ladeada; sin rasgos detallados salvo en primeros planos",
+    "rendering": "Relleno de grafito con borde garabateado y rayado de contorno",
+    "motion": "Inmóviles o con saltos de posición entre parpadeos (nunca caminata fluida)"
+  },
+  "environments": {
+    "design": "Perspectivas forzadas, puntos de fuga marcados, arquitectura rígida y vacía",
+    "depth": "3 planos mínimo (fondo, medio, primer término) para parallax",
+    "atmosphere": "Niebla hecha con goma de borrar, cielo rayado, ventanas que son papel sin dibujar"
+  },
+  "motion": {
+    "boilStep": 3,
+    "boilWobble": 2.6,
+    "drawStep": 2,
+    "hatchDrawStep": 3,
+    "rules": [
+      "Todo 'hierve': los trazos cambian levemente cada boilStep fotogramas",
+      "Los elementos aparecen dibujándose: contorno primero, rayado después",
+      "La cámara nunca está totalmente quieta (temblor sutil)",
+      "Los sustos son cortes o zooms bruscos, nunca movimientos suaves"
+    ]
+  },
+  "speed": {
+    "drawOutline": "0.6–1.5 s por elemento principal",
+    "hatchFill": "0.8–2 s por zona",
+    "sceneMinimum": "3 s",
+    "holdBeforeScare": "0.5–1 s de quietud antes de un golpe"
+  },
+  "camera": {
+    "default": "Push-in lento (zoom 1.00 → 1.12) con temblor de mano",
+    "scare": "Acercamiento repentino (zoom ×1.4–2 en 6–10 fotogramas)",
+    "parallax": "Capas a profundidad 0.3 / 0.6 / 1 / 1.3",
+    "framing": "Alternar plano general, plano medio, primer plano y plano detalle"
+  },
+  "transitions": [
+    { "id": "graphiteSmear", "description": "Garabatos de grafito cubren el encuadre y se retiran revelando la escena siguiente", "frames": "16–24" },
+    { "id": "eraserWipe", "description": "Una goma de borrar abre la escena siguiente a pasadas en zigzag", "frames": "18–26" },
+    { "id": "flickerCut", "description": "Corte estroboscópico: parpadeo entre escena, negro y escena nueva", "frames": "8–14" }
+  ],
+  "sound": {
+    "recommended": [
+      "Lápiz rascando papel durante los dibujos",
+      "Drones graves continuos (suspenso)",
+      "Golpes cinematográficos (boom) en sustos y cambios de escena",
+      "Goma de borrar / papel arrugado en transiciones",
+      "Silencio absoluto justo antes de un susto"
+    ],
+    "buses": { "voice": 1, "music": 0.45, "ambience": 0.5, "sfx": 0.7 }
+  },
+  "typography": {
+    "titleFont": "Rock Salt",
+    "subtitleFont": "Special Elite",
+    "titles": "Letras manuscritas rasposas, se escriben carácter a carácter, tiemblan con el boil",
+    "subtitles": "Máquina de escribir sobre una mancha de grafito; color papel; máximo 2 líneas; palabra por palabra",
+    "safeArea": { "top": 180, "bottom": 380, "sides": 70 }
+  },
+  "components": [
+    "GraphiteFrame", "SketchCanvas", "PencilStroke", "PencilDrawing", "AnimatedSketch",
+    "CrossHatching", "GraphiteFill", "EraserMarks", "GraphiteTexture", "Flicker", "Vignette",
+    "HandDrawnText", "GraphiteSubtitles", "transitions: graphiteSmear / eraserWipe / flickerCut",
+    "illustrations: City, Corridor, Figure, Eye"
+  ],
+  "examples": [
+    "Ciudad oscura nocturna con luna y farola (plano general, push-in + parallax)",
+    "Figura inquietante al fondo de un pasillo que se acerca entre parpadeos (plano medio → zoom brusco)",
+    "Primer plano de un ojo a grafito que dilata la pupila (plano detalle)"
+  ]
+}

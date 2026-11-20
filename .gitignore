@@ -1,0 +1,60 @@
+# =====================================================================
+# ESTUDIO DE ANIMACIÓN — control de versiones
+# Protege: CLAUDE.md, engine/, styles/, assets/, projects/ (código),
+#          documentación y storyboards ligeros de outputs/.
+# =====================================================================
+
+# --- Proyecto antiguo EXCLUIDO por completo (no se usa, no se toca) ---
+/gta-animation/
+
+# --- Archivo de respaldos locales (p. ej. .git de plantillas) ---
+/_archive/
+
+# --- Dependencias y entornos ---
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# --- Cachés y artefactos de Remotion / bundlers ---
+.remotion/
+dist/
+build/
+out/
+.cache/
+*.tsbuildinfo
+
+# --- Renders pesados (se regeneran desde el código) ---
+outputs/**/*.mp4
+outputs/**/*.mov
+outputs/**/*.webm
+outputs/**/*.gif
+outputs/**/*.wav
+outputs/**/*.mp3
+outputs/**/stills/
+outputs/**/renders/
+# Se conservan: README.md, storyboard/*.jpg y miniaturas ligeras
+
+# --- Claude Code: configuración local / enlaces de máquina ---
+.claude/settings.local.json
+**/.claude/settings.local.json
+# Enlace simbólico con ruta absoluta (se recrea con las Agent Skills)
+projects/*/.claude/skills
+
+# --- Secretos y entorno ---
+.env
+.env.*
+*.pem
+*.key
+
+# --- Sistema / editores ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+npm-debug.log*
+*.tmp
+*.swp
+.idea/
+.vscode/

@@ -26,21 +26,14 @@ out/
 *.tsbuildinfo
 
 # --- Renders pesados (se regeneran desde el código) ---
-outputs/**/*.mp4
-outputs/**/*.mov
-outputs/**/*.webm
-outputs/**/*.gif
-outputs/**/*.wav
-outputs/**/*.mp3
-outputs/**/stills/
-outputs/**/renders/
+outputs/
 # Se conservan: README.md, storyboard/*.jpg y miniaturas ligeras
 
 # --- Claude Code: configuración local / enlaces de máquina ---
 .claude/settings.local.json
 **/.claude/settings.local.json
 # Enlace simbólico con ruta absoluta (se recrea con las Agent Skills)
-projects/*/.claude/skills
+projects/
 
 # --- Secretos y entorno ---
 .env

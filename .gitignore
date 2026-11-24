@@ -10,6 +10,9 @@
 # --- Archivo de respaldos locales (p. ej. .git de plantillas) ---
 /_archive/
 
+# --- Material pendiente de revisión para borrar (ver forClean/README.md) ---
+/forClean/
+
 # --- Dependencias y entornos ---
 node_modules/
 .venv/
